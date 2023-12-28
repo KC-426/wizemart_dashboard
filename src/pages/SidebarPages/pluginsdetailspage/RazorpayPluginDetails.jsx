@@ -32,11 +32,12 @@ function RazorpayPluginDetails() {
 
     useEffect(()=>{
       setPageLoading(true)
-      axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/admin/get/plugin/razorpay/detail/${authState?.user?.app_id}`,{headers: {
+      axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/admin/get/plugin/razorpay/detail/${authState?.user?.app_id}`,
+      {headers: {
         'Authorization': `token ${editable_config.FRONTEND_VALIDATOR}`,
       },withCredentials:true})
       .then(res=>{
-        console.log('plugin deatils',res?.data)
+        console.log('plugin deatils here ==============>',res?.data)
         setIsInstalled(res?.data?.plugin_details?.razorpay_is_installed)
         setrazorpayKeyId(res?.data?.plugin_details?.razorpay_key_id)
         setrazorpayKeySecret(res?.data?.plugin_details?.razorpay_key_secret)
@@ -79,13 +80,14 @@ const handleCloseSnackbar = (event, reason) => {
       razorpay_key_id:razorpayKeyId?.trim(),
       razorpay_key_secret:razorpayKeySecret?.trim()
     }
+    console.log("start =========> ")
     await axios.patch(`${process.env.REACT_APP_BACKEND_URL}/api/admin/add/plugin/razorpay/details/${authState?.user?.app_id}`
     ,{...plugin_detail}
     ,{headers: {
       'Authorization': `token ${editable_config.FRONTEND_VALIDATOR}`,
     },withCredentials:true})
     .then(res=>{
-      console.log("Plugin Detail=>",res?.data)
+      console.log("Plugin Detail ===========>",res?.data)
       setSnackbarOpen(true);
       setMessage((prev)=>({...prev,type:'success',message:'Plugin Updated Successfully !!'}))
       setRender(prev=>!prev)

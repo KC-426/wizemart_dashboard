@@ -77,6 +77,12 @@ const navConfig = [
     // icon: getIcon('flat-color-icons:settings'),
   },
   {
+    title: 'Website',
+    path: '/dashboard/website',
+    icon: getIcon(imageImport.icon_sidebar20),
+    // icon: getIcon('flat-color-icons:settings'),
+  },
+  {
     title: 'Marketing',
     path: '/dashboard/marketing',
     icon: getIcon(imageImport.icon_sidebar23),

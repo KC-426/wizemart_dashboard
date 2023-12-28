@@ -15,6 +15,7 @@ import Banners from './pages/Banners';
 import Enquiry from './pages/Enquiry';
 import Category from './pages/Category';
 import Settings from './pages/Settings';
+import Website from "./pages/Website"
 import EditUser from './pages/SidebarPages/userpage/EditUser';
 import AddProducts from './pages/SidebarPages/productpage/AddProducts';
 import EditProduct from './pages/SidebarPages/productpage/EditProduct';
@@ -53,6 +54,7 @@ export default function Router() {
      <Route path="/dashboard/categories/add/new" element={ <DashboardLayout Component={<CategoryPage/>} />} />
      <Route path="/dashboard/edit/category/:main_category_id" element={ <DashboardLayout Component={<NewEditCategoryPage/>} />} />
      <Route path="/dashboard/settings" element={ <DashboardLayout Component={<Settings/>} />} />
+     <Route path="/dashboard/website" element={ <DashboardLayout Component={<Website/>} />} />
      <Route path="/dashboard/marketing" element={ <DashboardLayout Component={<Marketing/>} />} />
      <Route path="/dashboard/app-push-notification" element={ <DashboardLayout Component={<PushNotifi/>} />} />
      <Route path="/dashboard/shiprocket" element={ <DashboardLayout Component={<ShiprocketPluginDetails/>} />} />
